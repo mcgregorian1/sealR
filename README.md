@@ -5,50 +5,44 @@
 This how-to comes from https://hilaryparker.com/2014/04/29/writing-an-r-package-from-scratch/
 
 
-First, it's helpful to be using the sealR.Rproj. Otherwise, you need to setwd().
+First, it's helpful to be using the sealR.Rproj. Otherwise, you need to setwd("./sealR").
 
+Use this code for an example.Let's say you love dogs so much, you don't want just one picture of a dog to cheer you up. You want 10 of them (if you want more, that's on you). This is real-world example.
 ```r
-library(devtools)
-library(roxygen2)
+devtools::install_github("melissanjohnson/pupR")
 ```
 
 Create a new .R file containing only the function and save in the "R" folder of this repo.
 ```r
-cat_function <- function(love=TRUE){
-    if(love==TRUE){
-        print("I love cats!")
-    }
-    else {
-        print("I am not a cool person.")
-    }
+doggo <- function(num){
+    library(pupR)
+    
+    replicate(num, pupR())
 }
 ```
 Then add the documentation lines like this. You don't need to save.
 ```r
-#' A Cat Function
+#' A Dog Function
 #'
-#' This function allows you to express your love of cats.
-#' @param love Do you love cats? Defaults to TRUE.
-#' @keywords cats
+#' This function allows you to express your love of dogs.
+#' @param num Do you love dogs? The number corresponds to how many dog pictures you would like to see to cheer you up.
+#' @keywords dogs
 #' @export
 #' @examples
-#' cat_function()
+#' doggo()
  
-cat_function <- function(love=TRUE){
-    if(love==TRUE){
-        print("I love cats!")
-    }
-    else {
-        print("I am not a cool person.")
-    }
+doggo <- function(num){
+    library(pupR)
+    
+    replicate(num, pupR())
 }
 ```
 
-Then in the console, run the following. This will automatically save and add the documentation to the package.
+Now in the console, run the following. This will automatically save and add the documentation to the package.
 ```r
 library(dev_tools)
 library(roxygen2)
 document()
 ```
 
-That's it! To install the new version of the package, use `install_github("mcgregorian1/sealR")
+That's it! To install the new version of the package, use `install_github("mcgregorian1/sealR")`.
