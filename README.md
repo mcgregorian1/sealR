@@ -1,7 +1,7 @@
 # sealR
  Repo for common functions from SEAL lab at NCSU
 
-# How to add functions to this package
+## Adding functions to this package
 This how-to comes from https://hilaryparker.com/2014/04/29/writing-an-r-package-from-scratch/
 
 
@@ -12,7 +12,7 @@ library(devtools)
 library(roxygen2)
 ```
 
-Create a new .R file like this and save in the "R" folder of this repo. The comment lines are the documentation, while the function is presented below.
+Create a new .R file containing only the function and save in the "R" folder of this repo.
 ```r
 cat_function <- function(love=TRUE){
     if(love==TRUE){
@@ -23,7 +23,7 @@ cat_function <- function(love=TRUE){
     }
 }
 ```
-After saving, add the documentation lines like this.
+Then add the documentation lines like this. You don't need to save.
 ```r
 #' A Cat Function
 #'
@@ -44,8 +44,7 @@ cat_function <- function(love=TRUE){
 }
 ```
 
-Then in the console, run the following. This will automatically save the documentation to the package
-
+Then in the console, run the following. This will automatically save and add the documentation to the package.
 ```r
 library(dev_tools)
 library(roxygen2)
