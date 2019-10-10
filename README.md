@@ -8,7 +8,7 @@ This how-to comes from https://hilaryparker.com/2014/04/29/writing-an-r-package-
 Let's say you love dogs so much, you don't want just one picture of a dog to cheer you up. You want 10 of them (or 100. or 1000). This is a real-world example.
 - to see what this looks like when completed, use the website above or run the code below to follow along:
 ```r
-install_github("mcgregorian1/sealR")
+devtools::install_github("mcgregorian1/sealR")
 library(sealR)
 ?doggo
 ```
