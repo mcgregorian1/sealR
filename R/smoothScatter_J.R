@@ -2,8 +2,8 @@
 #' Usage is the same with basic smoothScatter
 smoothScatter_J <- function(x, y, nbin = 300, nrpoints = 0, ...) {
     require(RColorBrewer)
-    pal <- colorRampPalette(c("white", "#f9f9fd", "#a3a6e1", rev(brewer.pal(11, "Spectral"))))
-    smoothScatter(x, y, colramp = pal, nbin = nbin, nrpoints = nrpoints, ...)
+    pal <- colorRampPalette(c("white", rev(brewer.pal(11, "Spectral"))))
+    smoothScatter(x, y, colramp = pal, nbin = nbin, nrpoints = nrpoints, transformation = function(x) x.^6, ...)
     fit <- lm(y ~ x)
     abline(fit, col = "red")
     # === draw a 1:1 line ===
