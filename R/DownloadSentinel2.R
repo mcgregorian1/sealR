@@ -14,7 +14,7 @@
 #' a different code editor, whether that's R terminal or VSCode.
 #' 
 #' If you need help figuring out whether your regex is correct, see http://www.goring.org/resources/tutorial.html.
-#' Note if you do use something like regex101.com that in R, a \\ means \, even though this isn't true for other languages.
+#' Note if you do use something like regex101.com that in R, a double slash = a single slash, even though this isn't true for other languages.
 #'
 #' If you want to figure out which tiles you need, check out this site for polygon shapefiles of the S2 tiles: https://github.com/justinelliotmeyers/Sentinel-2-Shapefile-Index.
 #' Using this you can easily filter to the ones you need using `raster::intersect()` or something.
