@@ -14,7 +14,9 @@
 #' a different code editor, whether that's R terminal or VSCode.
 #' 
 #' If you need help figuring out whether your regex is correct, see http://www.goring.org/resources/tutorial.html.
-#' Note if you do use something like regex101.com that in R, a double slash = a single slash, even though this isn't true for other languages.
+#' Note if you do use something like regex101.com that in R strings, a double slash (`\\`) = a single slash (`\`). This is because 
+#' that `\` is a special character in character strings of most programming languages, it is reserved to escape the 
+#' character that follows it (e.g., `\n` means newline).
 #'
 #' If you want to figure out which tiles you need, check out this site for polygon shapefiles of the S2 tiles: https://github.com/justinelliotmeyers/Sentinel-2-Shapefile-Index.
 #' Using this you can easily filter to the ones you need using `raster::intersect()` or something.
@@ -23,7 +25,7 @@
 #'
 #' If there's any bug, please let me know.
 #'
-#' Author: Jacory (Xiaojie Gao), description updated by Ian McGregor
+#' Author: Xiaojie Gao, description updated by Ian McGregor
 #'
 #' @param tilename what tile do you want to download
 #' @param folder local folder used to store downloaded files
