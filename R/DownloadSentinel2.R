@@ -12,6 +12,10 @@
 #'
 #' NOTE this function can NOT be run in RStudio because RStudio does not recognize `gsutil`. You need to use
 #' a different code editor, whether that's R terminal or VSCode.
+#'
+#' This link is where things are being downloaded from. The "tiles" folder is L1C, otherwise all L2A is in
+#' the "L2" folder.
+#' https://console.cloud.google.com/storage/browser/gcp-public-data-sentinel-2?pageState=(%22StorageObjectListTable%22:(%22f%22:%22%255B%255D%22))&prefix=&forceOnObjectsSortingFiltering=false
 #' 
 #' If you need help figuring out whether your regex is correct, see http://www.goring.org/resources/tutorial.html.
 #' Note if you do use something like regex101.com that in R strings, a double slash (`\\`) = a single slash (`\`). This is because 
