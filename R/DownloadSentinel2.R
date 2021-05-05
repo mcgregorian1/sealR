@@ -1,35 +1,33 @@
 #' Download Sentinel 2 dataset from google cloud.
 #'
-#' This function downloads all Sentinel 2 images (L1C or L2A) from Google's repository. These images
-#' are the same as if you downloaded these from ESA Copernicus, but faster (i.e. you don't have to 
+#' This function downloads all Sentinel 2 images (L1C or L2A) from \href{https://console.cloud.google.com/storage/browser/gcp-public-data-sentinel-2?pageState=(%22StorageObjectListTable%22:(%22f%22:%22%255B%255D%22))&prefix=&forceOnObjectsSortingFiltering=false}{Google's repository}(. 
+#' (the "tiles" folder is L1C, otherwise all L2A is in the "L2" folder). 
+#' These images are the same as if you downloaded these from ESA Copernicus, but faster (i.e. you don't have to 
 #' request images and wait for them). Note that Google does not do their own L2A conversion - all L2A images
 #' are supplied directly from Copernicus (true as of April 2021).
 #'
 #' Running this function requires Google Cloud Storage SDK, which you can download and install 
-#' from https://cloud.google.com/sdk/docs/install. For your first time attempting to run the function
+#' from \href{https://cloud.google.com/sdk/docs/install}{here}. For your first time attempting to run the function
 #' you will need to open a python script and run `gcloud auth login`, which will take you to log in to your
 #' google account.
 #'
 #' NOTE this function can NOT be run in RStudio because RStudio does not recognize `gsutil`. You need to use
 #' a different code editor, whether that's R terminal or VSCode.
 #'
-#' This link is where things are being downloaded from. The "tiles" folder is L1C, otherwise all L2A is in
-#' the "L2" folder.
-#' https://console.cloud.google.com/storage/browser/gcp-public-data-sentinel-2?pageState=(%22StorageObjectListTable%22:(%22f%22:%22%255B%255D%22))&prefix=&forceOnObjectsSortingFiltering=false
 #' 
-#' If you need help figuring out whether your regex is correct, see http://www.goring.org/resources/tutorial.html.
+#' If you need help figuring out whether your regex is correct, see \href{http://www.goring.org/resources/tutorial.html}{here}.
 #' Note if you do use something like regex101.com that in R strings, a double slash (`\\`) = a single slash (`\`). This is because 
 #' that `\` is a special character in character strings of most programming languages, it is reserved to escape the 
 #' character that follows it (e.g., `\n` means newline).
 #'
-#' If you want to figure out which tiles you need, check out this site for polygon shapefiles of the S2 tiles: https://github.com/justinelliotmeyers/Sentinel-2-Shapefile-Index.
+#' If you want to figure out which tiles you need, check out \href{https://github.com/justinelliotmeyers/Sentinel-2-Shapefile-Index}{this site} for polygon shapefiles of the S2 tiles.
 #' Using this you can easily filter to the ones you need using `raster::intersect()` or something.
 #'
 #' Once the function has started, press ctrl+c in the command line can stop it.
 #'
 #' If there's any bug, please let me know.
 #'
-#' Author: Xiaojie Gao, description updated by Ian McGregor
+#' Author: Xiaojie Gao, description/details updated by Ian McGregor
 #'
 #' @param tilename what tile do you want to download
 #' @param folder local folder used to store downloaded files
